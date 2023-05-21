@@ -36,7 +36,7 @@
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            button1 = new Button();
+            btnLogin = new Button();
             button2 = new Button();
             pictureBoxInstagram = new PictureBox();
             pictureBoxGithub = new PictureBox();
@@ -127,17 +127,18 @@
             panel2.Size = new Size(162, 1);
             panel2.TabIndex = 6;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Cyan;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(67, 258);
-            button1.Name = "button1";
-            button1.Size = new Size(193, 32);
-            button1.TabIndex = 7;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
+            btnLogin.BackColor = Color.Cyan;
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogin.Location = new Point(67, 258);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(193, 32);
+            btnLogin.TabIndex = 7;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += button1_Click;
             // 
             // button2
             // 
@@ -211,7 +212,7 @@
             Controls.Add(pictureBoxGithub);
             Controls.Add(pictureBoxInstagram);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pictureBox3);
@@ -243,7 +244,7 @@
         private PictureBox pictureBox3;
         private Panel panel1;
         private Panel panel2;
-        private Button button1;
+        private Button btnLogin;
         private Button button2;
         private PictureBox pictureBoxInstagram;
         private PictureBox pictureBoxGithub;

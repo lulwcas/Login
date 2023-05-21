@@ -93,10 +93,14 @@ namespace Login
         {
             System.Diagnostics.Process.Start("https://www.instagram.com");
         }
-
         private void pictureBoxGithub_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
