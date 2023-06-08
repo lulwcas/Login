@@ -1,4 +1,5 @@
 using System;
+using System.Data.SqlTypes;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Security.Policy;
@@ -84,23 +85,25 @@ namespace Login
             this.Close();
         }
 
-        private void pictureBoxTwitter_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://twitter.com/home");
-        }
-
-        private void pictureBoxInstagram_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://www.instagram.com");
-        }
-        private void pictureBoxGithub_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("https://github.com");
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "data source = ; database=library;integrated security=True";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
 
+            cmd.CommandText = "select * from loginTable where username = '" + txtUsername.Text + "' and pass = '" + txtPassword.Text"' ";
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+            }
+            else
+            {
+                MessageBox.Show("Usuário ou Senha incorretos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
